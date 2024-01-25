@@ -1,16 +1,21 @@
-﻿
-string[] StringsArray = { "GeekBrains", "HelloWorld", "abc", "hjiufhwei", "fjfue", "12f", "fsd", "ffdfew", "124" };
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
- private string[] SortArray(string[] strings){
- string[] NewArray = new string[strings.Length];
-
-for (int i = 0; i < strings.Length; i++)
+namespace ConsoleApp2
 {
-    if(strings[i].Length <= 3)
+    internal class Program
     {
-         NewArray[i] = strings[i];
-    }
-}
+        static void Main(string[] args)
+        {
+            string[] StringsArray = { "GeekBrains", "HelloWorld", "abc", "hjiufhwei", "ffe", "12f", "fsd", "ffdfew", "124" };
+            string[] NewArray = StringsArray.Where(s => s.Length <= 3).ToArray();
+            Console.Write(string.Join(",", NewArray));
+            
+        }
 
+        }
 }
 
